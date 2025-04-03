@@ -1,4 +1,4 @@
-<div style="display: flex; align-items: center; justify-content: space-between; flex-direction: row;">
+<div style="display: flex;">
 <h2>Integrantes do grupo:</h2>
 <p>02/04/2025</p>
 </div>
