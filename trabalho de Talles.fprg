@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Criando trabalho de Talles"/>
+        <attribute name="authors" value="HP"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-24 08:53:10 "/>
+        <attribute name="created" value="SFA7UkVUQUdVQVJEQTsyMDI1LTAzLTI0OyIwMzozNzoxMSAiOzIwNzY="/>
+        <attribute name="edited" value="SFA7UkVUQUdVQVJEQTsyMDI1LTAzLTI0OyIwMzozNzo1MiAiOzE7SFA7UkVUQUdVQVJEQTsyMDI1LTAzLTI0OyIwMzowNzoxNCAiO0xpc3RhRGVDb21wcmFzX1ZhbGlkYWRvLmZwcmc7NzE2Mg=="/>
+        <attribute name="edited" value="SFA7UkVUQUdVQVJEQTsyMDI1LTAzLTI0OyIwNTo0OToxNCAiOzI7MjE5Mw=="/>
+        <attribute name="edited" value="V2lsc29uO0JPT0stSjZLSElHREFSOTsyMDI1LTAzLTI0OyIwODo1MzoxMCAiOzE7Mjk2OQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="itens" type="String" array="True" size="100"/>
+            <declare name="status" type="Boolean" array="True" size="100"/>
+            <declare name="opcao, i" type="Integer" array="False" size=""/>
+            <declare name="novoItem" type="String" array="False" size=""/>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <assign variable="contador" expression="0"/>
+            <assign variable="opcao" expression="-1"/>
+            <assign variable="novoItem" expression="&quot;Itens&quot;"/>
+            <declare name="continuar" type="Boolean" array="False" size=""/>
+            <assign variable="continuar" expression="true"/>
+            <while expression="opcao &lt;&gt; 6">
+                <output expression="&quot;MENU:&quot;" newline="True"/>
+                <output expression="&quot;1. Adicionar Item&quot;" newline="True"/>
+                <output expression="&quot;2. Listar Itens&quot;" newline="True"/>
+                <output expression="&quot;3. Marcar como comprado&quot;" newline="True"/>
+                <output expression="&quot;4. Editar Item&quot;" newline="True"/>
+                <output expression="&quot;5. Excluir Item&quot;" newline="True"/>
+                <output expression="&quot;6. Sair&quot;" newline="True"/>
+                <input variable="opcao"/>
+                <if expression="opcao == 1">
+                    <then>
+                        <while expression="contador &lt; 100 &amp;&amp; continuar == true">
+                            <output expression="&quot;Digite o nome do Item:&quot;" newline="True"/>
+                            <input variable="novoItem"/>
+                            <assign variable="itens[contador]" expression="novoItem"/>
+                            <assign variable="status[contador]" expression="false"/>
+                            <assign variable="contador" expression="contador + 1"/>
+                            <output expression="&quot;Deseja continuar? (True para sim e False para n&#227;o)&quot;" newline="True"/>
+                            <input variable="continuar"/>
+                        </while>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="opcao == 2">
+                    <then>
+                        <if expression="contador == 0">
+                            <then>
+                                <output expression="&quot;A lista est&#225; vazia&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <for variable="i" start="0" end="contador -1" direction="inc" step="1">
+                                    <if expression="status[i] == true">
+                                        <then>
+                                            <output expression="i" newline="False"/>
+                                            <output expression="&quot;-&quot;" newline="False"/>
+                                            <output expression="itens[i]" newline="False"/>
+                                            <output expression="&quot;[comprado]&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <output expression="i" newline="False"/>
+                                            <output expression="&quot;-&quot;" newline="False"/>
+                                            <output expression="itens[i]" newline="False"/>
+                                            <output expression="&quot;[pendente]&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </for>
+                            </else>
+                        </if>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="opcao == 3">
+                    <then>
+                        <output expression="&quot;Digite o n&#250;mero do item que deseja marcar como comprado (0 a&quot;" newline="False"/>
+                        <output expression="contador -1" newline="False"/>
+                        <output expression="&quot;):&quot;" newline="False"/>
+                        <input variable="i"/>
+                        <if expression="i &gt;= 0 &amp;&amp; i &lt; contador">
+                            <then>
+                                <assign variable="status[i]" expression="true"/>
+                            </then>
+                            <else>
+                                <output expression="&quot;&#205;ndice inv&#225;lido!&quot;" newline="True"/>
+                            </else>
+                        </if>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="opcao == 4">
+                    <then>
+                        <output expression="&quot;Digite o n&#250;mero do item que voc&#234; deseja editar (0 a &quot;" newline="False"/>
+                        <output expression="contador - 1" newline="False"/>
+                        <output expression="&quot;):&quot;" newline="True"/>
+                        <input variable="i"/>
+                        <if expression="i &gt;= 0 &amp;&amp; i &lt; contador">
+                            <then>
+                                <output expression="&quot;Digite o nome do novo item&quot;" newline="True"/>
+                                <input variable="novoItem"/>
+                                <assign variable="itens[i]" expression="novoitem"/>
+                                <output expression="&quot;Item editado com sucesso!&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <output expression="&quot;&#205;ndice inv&#225;lido!&quot;" newline="True"/>
+                            </else>
+                        </if>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="opcao == 5">
+                    <then>
+                        <if expression="contador &gt;= 0">
+                            <then>
+                                <output expression="&quot;Digite o n&#250;mero do item que voc&#234; deseja excluir (0 a &quot;" newline="False"/>
+                                <output expression="contador - 1" newline="False"/>
+                                <output expression="&quot;):&quot;" newline="True"/>
+                                <input variable="i"/>
+                                <if expression="i &gt;= 0 &amp;&amp; i &lt; contador">
+                                    <then>
+                                        <for variable="i" start="0" end="contador -2" direction="inc" step="1">
+                                            <assign variable="itens[i]" expression="itens[i+1]"/>
+                                            <assign variable="status[i]" expression="status[i+1]"/>
+                                        </for>
+                                        <assign variable="contador" expression="contador-1"/>
+                                        <output expression="&quot;Item excluido com sucesso!&quot;" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <output expression="&quot;&#205;ndice inv&#225;lido!&quot;" newline="True"/>
+                                    </else>
+                                </if>
+                            </then>
+                            <else/>
+                        </if>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="opcao == 6">
+                    <then>
+                        <output expression="&quot;Fechando lista de itens&quot;" newline="True"/>
+                    </then>
+                    <else/>
+                </if>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
