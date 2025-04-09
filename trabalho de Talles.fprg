@@ -4,24 +4,24 @@
         <attribute name="name" value="Criando trabalho de Talles"/>
         <attribute name="authors" value="HP"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-04-09 03:57:26 "/>
+        <attribute name="saved" value="2025-04-09 04:12:39 "/>
         <attribute name="created" value="SFA7UkVUQUdVQVJEQTsyMDI1LTAzLTI0OyIwMzozNzoxMSAiOzIwNzY="/>
         <attribute name="edited" value="SFA7UkVUQUdVQVJEQTsyMDI1LTAzLTI0OyIwMzozNzo1MiAiOzE7SFA7UkVUQUdVQVJEQTsyMDI1LTAzLTI0OyIwMzowNzoxNCAiO0xpc3RhRGVDb21wcmFzX1ZhbGlkYWRvLmZwcmc7NzE2Mg=="/>
         <attribute name="edited" value="V2lsc29uO0JPT0stSjZLSElHREFSOTsyMDI1LTAzLTI0OyIwODo1MzoxMCAiOzE7Mjk2OQ=="/>
         <attribute name="edited" value="SFA7UkVUQUdVQVJEQTsyMDI1LTA0LTA5OyIwMzo1NzoyNiAiOzQ7MjE5OQ=="/>
+        <attribute name="edited" value="bGFsdWM7REVTS1RPUC0zMUlTN0IzOzIwMjUtMDQtMDk7IjA0OjEyOjM5ICI7MTsyODQ0"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
             <declare name="itens" type="String" array="True" size="100"/>
             <declare name="status" type="Boolean" array="True" size="100"/>
-            <declare name="opcao, i" type="Integer" array="False" size=""/>
+            <declare name="contador, opcao, i" type="Integer" array="False" size=""/>
+            <declare name="continuar" type="Boolean" array="False" size=""/>
             <declare name="novoItem" type="String" array="False" size=""/>
-            <declare name="contador" type="Integer" array="False" size=""/>
             <assign variable="contador" expression="0"/>
             <assign variable="opcao" expression="-1"/>
             <assign variable="novoItem" expression="&quot;Itens&quot;"/>
-            <declare name="continuar" type="Boolean" array="False" size=""/>
             <assign variable="continuar" expression="true"/>
             <while expression="opcao &lt;&gt; 6">
                 <output expression="&quot;MENU:&quot;" newline="True"/>
