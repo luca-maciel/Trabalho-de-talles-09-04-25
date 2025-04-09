@@ -4,11 +4,11 @@
         <attribute name="name" value="Criando trabalho de Talles"/>
         <attribute name="authors" value="HP"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-04-09 02:40:32 "/>
+        <attribute name="saved" value="2025-04-09 03:57:26 "/>
         <attribute name="created" value="SFA7UkVUQUdVQVJEQTsyMDI1LTAzLTI0OyIwMzozNzoxMSAiOzIwNzY="/>
         <attribute name="edited" value="SFA7UkVUQUdVQVJEQTsyMDI1LTAzLTI0OyIwMzozNzo1MiAiOzE7SFA7UkVUQUdVQVJEQTsyMDI1LTAzLTI0OyIwMzowNzoxNCAiO0xpc3RhRGVDb21wcmFzX1ZhbGlkYWRvLmZwcmc7NzE2Mg=="/>
         <attribute name="edited" value="V2lsc29uO0JPT0stSjZLSElHREFSOTsyMDI1LTAzLTI0OyIwODo1MzoxMCAiOzE7Mjk2OQ=="/>
-        <attribute name="edited" value="SFA7UkVUQUdVQVJEQTsyMDI1LTA0LTA5OyIwMjo0MDozMiAiOzM7MjE4Ng=="/>
+        <attribute name="edited" value="SFA7UkVUQUdVQVJEQTsyMDI1LTA0LTA5OyIwMzo1NzoyNiAiOzQ7MjE5OQ=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -121,7 +121,7 @@
                                 <input variable="i"/>
                                 <if expression="i &gt;= 0 &amp;&amp; i &lt; contador">
                                     <then>
-                                        <for variable="i" start="0" end="contador -2" direction="inc" step="1">
+                                        <for variable="i" start="i" end="contador -2" direction="inc" step="1">
                                             <assign variable="itens[i]" expression="itens[i+1]"/>
                                             <assign variable="status[i]" expression="status[i+1]"/>
                                         </for>
