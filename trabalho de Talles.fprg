@@ -4,11 +4,11 @@
         <attribute name="name" value="Criando trabalho de Talles"/>
         <attribute name="authors" value="HP"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-03-24 08:53:10 "/>
+        <attribute name="saved" value="2025-04-09 02:40:32 "/>
         <attribute name="created" value="SFA7UkVUQUdVQVJEQTsyMDI1LTAzLTI0OyIwMzozNzoxMSAiOzIwNzY="/>
         <attribute name="edited" value="SFA7UkVUQUdVQVJEQTsyMDI1LTAzLTI0OyIwMzozNzo1MiAiOzE7SFA7UkVUQUdVQVJEQTsyMDI1LTAzLTI0OyIwMzowNzoxNCAiO0xpc3RhRGVDb21wcmFzX1ZhbGlkYWRvLmZwcmc7NzE2Mg=="/>
-        <attribute name="edited" value="SFA7UkVUQUdVQVJEQTsyMDI1LTAzLTI0OyIwNTo0OToxNCAiOzI7MjE5Mw=="/>
         <attribute name="edited" value="V2lsc29uO0JPT0stSjZLSElHREFSOTsyMDI1LTAzLTI0OyIwODo1MzoxMCAiOzE7Mjk2OQ=="/>
+        <attribute name="edited" value="SFA7UkVUQUdVQVJEQTsyMDI1LTA0LTA5OyIwMjo0MDozMiAiOzM7MjE4Ng=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -113,7 +113,7 @@
                 </if>
                 <if expression="opcao == 5">
                     <then>
-                        <if expression="contador &gt;= 0">
+                        <if expression="contador &gt; 0">
                             <then>
                                 <output expression="&quot;Digite o n&#250;mero do item que voc&#234; deseja excluir (0 a &quot;" newline="False"/>
                                 <output expression="contador - 1" newline="False"/>
@@ -133,7 +133,9 @@
                                     </else>
                                 </if>
                             </then>
-                            <else/>
+                            <else>
+                                <output expression="&quot;N&#227;o h&#225; itens para serem exclu&#237;dos&quot;" newline="True"/>
+                            </else>
                         </if>
                     </then>
                     <else/>
